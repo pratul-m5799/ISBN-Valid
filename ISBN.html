@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <b>ISBN Validation</b>
+    <br />
+</head>
+<title>ISBN Check</title>
+<style type="text/css">
+    .c {
+        text-align: center;
+        font: outline;
+    }
+</style>
+
+<body>
+    <hr />
+    <br />
+    <h1 class="c">Welcome dear customer!</h1>
+    <p>
+        <b>
+        In order to proceed further with book ordering and other information,
+        please provide <u>ISBN number</u> of the given book. for example Format:
+        ISBN:978-3-16-148410-0</b
+      >
+    </p>
+    <br />
+    <div class='c'>
+      <label for="getISBN"> ISBN number </label>
+      <input id="isbn" name="ISBN num" type="text" required />
+    </div>
+    <br />
+    <div class="c">
+      <button type="submit" onclick="handleSubmit()">Submit</button>
+    </div>
+
+    <script>
+      const num = document.getElementById("isbn");
+
+      let exp = /^(?:ISBN(?:-13)?:?\ *(97(?:8|9)([ -]?)(?=\d{1,5}\2?\d{1,7}\2?\d{1,6}\2?\d)(?:\d\2*){9}\d))$/i;
+
+      const handleSubmit = () => {
+        console.log("num", num.value);
+        if (exp.test(num.value)) {
+          alert("true");
+        } else {
+          alert("false");
+        }
+      };
+    </script>
+  </body>
+</html>
